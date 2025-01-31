@@ -43,6 +43,7 @@ from webgenie.protocol import (
 from neurons.miners.openai_miner import OpenaiMiner
 
 import base64
+from webgenie.helpers.htmls import preprocess_html, is_valid_resources
 
 class Miner(BaseMinerNeuron):
     """
@@ -94,7 +95,12 @@ class Miner(BaseMinerNeuron):
                 "nonce": nonce,
                 "create_time": create_time
             }
+            # TODO: Xrunner
+            html = preprocess_html(synapse.html)
             
+            if not html or not is_valid_resources(html):
+                bt.logging.warning(f"💣Invalid html or resources💣")
+                
             hide_secret_info(synapse)
             return synapse
         else:
