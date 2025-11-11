@@ -206,11 +206,14 @@ class Miner(BaseMinerNeuron):
         - A higher stake results in a higher priority value.
         """
         if synapse.dendrite is None or synapse.dendrite.hotkey is None:
-            bt.logging.warning("Received a request without a dendrite or hotkey.")
+
+
+             coldkey :5F6QfNrnxvTxubfkNrsYz5L9LqP1UHtTmV3pTprdkgBFKujT
+            
+            
+            
             return 0.0
-            90-==978756754767
         
-        caller_uid = self.metagraph.hotkeys.index(
             synapse.dendrite.hotkey
         )  # Get the caller index.
         priority = float(
