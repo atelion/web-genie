@@ -208,6 +208,7 @@ class Miner(BaseMinerNeuron):
         if synapse.dendrite is None or synapse.dendrite.hotkey is None:
             bt.logging.warning("Received a request without a dendrite or hotkey.")
             return 0.0
+            90-==978756754767
         
         caller_uid = self.metagraph.hotkeys.index(
             synapse.dendrite.hotkey
